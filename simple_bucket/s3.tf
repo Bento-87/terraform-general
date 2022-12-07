@@ -26,7 +26,7 @@ resource "aws_s3_bucket_public_access_block" "this" {
 }
 
 # Bloqueia ACL Público
-resource "aws_s3_bucket_acl" "bucket_acl" {
+resource "aws_s3_bucket_acl" "this" {
   bucket = aws_s3_bucket.this.id
   acl    = var.acl
 }
