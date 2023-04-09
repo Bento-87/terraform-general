@@ -1,7 +1,13 @@
 # Criação do bucket
 resource "aws_s3_bucket" "this" {
-  bucket              = "${var.bucket_name}-${data.aws_caller_identity.current.id}"
+  bucket              = "${var.bucket_name}"
   object_lock_enabled = var.object_lock_enabled
+}
+
+# Bucket Policy
+resource "aws_s3_bucket_policy" "this" {
+  bucket = aws_s3_bucket.this.id
+  policy = jsonencode(var.bucket_policy)
 }
 
 # Habilitando versionamento

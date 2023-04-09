@@ -33,7 +33,6 @@ variable "profile" {
 
 variable "bucket_name" {
   type        = string
-  default     = "terraform-tfstates"
   description = "Default region"
 }
 
@@ -59,35 +58,12 @@ variable "public_acls" {
   }
 }
 
+variable "bucket_policy"{
+  type = string
+}
+
 variable "acl" {
   type        = string
   default     = "private"
   description = "Default ACL type"
-}
-
-#    _____          __  __ 
-#   |_   _|   /\   |  \/  |
-#     | |    /  \  | \  / |
-#     | |   / /\ \ | |\/| |
-#    _| |_ / ____ \| |  | |
-#   |_____/_/    \_\_|  |_|
-#                          
-#                          
-
-variable "path" {
-  type        = string
-  default     = "/"
-  description = "Default IAM Path"
-}
-
-#this_bucket Policy
-variable "this_bucket_name" {
-  type        = string
-  default     = "tfstates_bucket"
-  description = "Policy name"
-}
-
-variable "this_bucket_description" {
-  type    = string
-  default = "Policy for tfstates bucket"
 }
