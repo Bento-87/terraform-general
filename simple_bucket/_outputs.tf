@@ -9,11 +9,3 @@ output "bucket_id" {
 output "bucket_region" {
     value = aws_s3_bucket.this.region
 }
-
-output "iam_policy_arn" {
-  value = aws_iam_policy.this_bucket_policy.arn
-}
-
-output "iam_policy_id" {
-  value = aws_iam_policy.this_bucket_policy.id
-}
