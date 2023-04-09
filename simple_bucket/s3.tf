@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "this" {
 # Bucket Policy
 resource "aws_s3_bucket_policy" "this" {
   bucket = aws_s3_bucket.this.id
-  policy = jsonencode(var.bucket_policy)
+  policy = var.bucket_policy
 }
 
 # Habilitando versionamento
